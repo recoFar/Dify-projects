@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dify 聊天机器人演示</title>
+    <style>
+        /* 基础页面样式，你可以根据实际需求自由修改 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        .header {
+            background-color: #fff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #1C64F2;
+        }
+        .content {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+        }
+    </style>
+
+    <!-- 1. 自定义 Dify 聊天窗口样式 -->
+    <style>
+        #dify-chatbot-bubble-button {
+            background-color: #1C64F2 !important;
+        }
+        #dify-chatbot-bubble-window {
+            width: 24rem !important;
+            height: 40rem !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 页面基础内容 -->
+    <div class="header">
+        <h1>我的 Dify 智能助手</h1>
+    </div>
+    <div class="content">
+        <p>欢迎使用基于 Dify 构建的智能对话系统！</p>
+        <p>请点击页面右下角的蓝色气泡图标，开始与 AI 助手对话。</p>
+    </div>
+
+    <!-- 2. Dify 聊天机器人配置 -->
+    <script>
+        window.difyChatbotConfig = {
+            token: 'tPOoFBIHv3u9EsPS',
+            baseUrl: 'http://localhost',
+            inputs: {
+                // 你可以在这里定义 Start 节点的输入变量
+                // 例如: name: "NAME"
+            },
+            systemVariables: {
+                // user_id: '在此处定义用户 ID',
+                // conversation_id: '在此处定义会话 ID，必须是有效的 UUID',
+            },
+            userVariables: {
+                // avatar_url: '在此处定义用户头像 URL',
+                // name: '在此处定义用户名',
+            },
+        }
+    </script>
+
+    <!-- 3. 引入 Dify 聊天机器人脚本 -->
+    <script
+        src="http://localhost/embed.min.js"
+        id="tPOoFBIHv3u9EsPS"
+        defer>
+    </script>
+
+</body>
+</html>
